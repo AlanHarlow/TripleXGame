@@ -2,20 +2,22 @@
 
 int main() {
     // Printng welcome message to the terminal
-    std::cout << "You are a secret agent breaking into a secure server room...\n";
-    std::cout << "Enter the correct code to continue...\n";
+    std::cout << "You are a secret agent breaking into a secure server room..." << std::endl;
+    std::cout << "Enter the correct code to continue..." << std::endl;
 
     // Declare 3 number code
-    const int numOne = 4;
-    const int numTwo = 3;
-    const int numThree = 2;
+    const int CodeA = 4;
+    const int CodeB = 3;
+    const int CodeC = 2;
 
-    const int product = numOne * numTwo * numThree;
-    const int sum = numOne + numTwo + numThree;
+    const int CodeProduct = CodeA * CodeB * CodeC;
+    const int CodeSum = CodeA + CodeB + CodeC;
 
     // Print sum and product to terminal
-    std::cout << product << std::endl;
-    std::cout << sum << std::endl;
+    std::endl;
+    std::cout << "There are three numbers in the code" << std::endl;
+    std::cout << "The code multiplies to: " << CodeProduct << std::endl;
+    std::cout << "The code adds up to: " << CodeSum << std::endl;
 
     return 0;
 }
