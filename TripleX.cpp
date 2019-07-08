@@ -1,18 +1,21 @@
 #include <iostream>
 
 int main() {
+    // Printng welcome message to the terminal
     std::cout << "You are a secret agent breaking into a secure server room...\n";
     std::cout << "Enter the correct code to continue...\n";
 
-    int a = 4;
-    int b = 3;
-    int c = 2;
+    // Declare 3 number code
+    const int numOne = 4;
+    const int numTwo = 3;
+    const int numThree = 2;
 
-    int sum = a + b + c;
-    int product = a * b * c;
+    const int product = numOne * numTwo * numThree;
+    const int sum = numOne + numTwo + numThree;
 
-    std::cout << sum << std::endl;
+    // Print sum and product to terminal
     std::cout << product << std::endl;
+    std::cout << sum << std::endl;
 
     return 0;
 }
