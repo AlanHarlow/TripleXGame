@@ -14,10 +14,19 @@ int main() {
     const int CodeSum = CodeA + CodeB + CodeC;
 
     // Print sum and product to terminal
-    std::endl;
+    std::cout << std::endl;
     std::cout << "There are three numbers in the code" << std::endl;
     std::cout << "The code multiplies to: " << CodeProduct << std::endl;
     std::cout << "The code adds up to: " << CodeSum << std::endl;
+
+    int GuessA, GuessB, GuessC;
+    std::cin >> GuessA;
+    std::cin >> GuessB;
+    std::cin >> GuessC;
+
+    // Totals of guess used for testing for correct answer
+    int GuessSum = GuessA + GuessB + GuessC;
+    int GuessProduct = GuessA * GuessB * GuessC;
 
     return 0;
 }
