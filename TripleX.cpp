@@ -2,6 +2,7 @@
 #include <ctime>
 
 void PrintIntroduction(int);
+void PrintLevelInfo(int);
 bool PlayGame(int);
 
 int main() {
@@ -9,6 +10,8 @@ int main() {
 
     int LevelDifficulty = 1;
     const int MaxLevel = 5;
+
+    PrintIntroduction(MaxLevel);
 
     while(LevelDifficulty <= MaxLevel) {
 
@@ -21,12 +24,12 @@ int main() {
         }
         
     }
-    std::cout << "Great work, you got all the codes." << std::endl;
+    std::cout << "Great, you got the files. Now get out of there Agent!" << std::endl;
     return 0;
 }
 
 bool PlayGame(int Difficulty) {
-    PrintIntroduction(Difficulty);
+    PrintLevelInfo(Difficulty);
     
     // Declare 3 number code
     const int CodeA = rand() % Difficulty + Difficulty;
@@ -37,9 +40,8 @@ bool PlayGame(int Difficulty) {
     const int CodeSum = CodeA + CodeB + CodeC;
 
     // Print sum and product to terminal
-    std::cout << "\nThere are three numbers in the code" << std::endl;
     std::cout << "+ The code adds up to: " << CodeSum << std::endl;
-    std::cout << "+ The code multiplies to: " << CodeProduct << std::endl;
+    std::cout << "* The code multiplies to: " << CodeProduct << std::endl;
 
     int GuessA, GuessB, GuessC;
     std::cin >> GuessA >> GuessB >> GuessC;
@@ -49,17 +51,23 @@ bool PlayGame(int Difficulty) {
     int GuessProduct = GuessA * GuessB * GuessC;
 
     if(GuessSum == CodeSum && GuessProduct == CodeProduct) {
-        std::cout << "You got in, moving to the next level." << std::endl;
+        std::cout << "\nYou got in!" << std::endl;
         return true;
     }
     else{
-        std::cout << "Not correct, attempting the level again." << std::endl;
+        std::cout << "\nNot the correct code. The code has changed, try again." << std::endl;
         return false;
     }
 }
 
-void PrintIntroduction(int Difficulty) {
+void PrintIntroduction(int MaxLevel) {
     // Printng welcome message to the terminal
-    std::cout << "\n\nYou are a secret agent breaking into a level " << Difficulty;
-    std::cout << " secure server room...\nEnter the correct code to continue..." << std::endl;
+    std::cout << "\n\nYou are a secret agent and are attempting to steal files from a mainframe.\n";
+    std::cout << "There are " << MaxLevel << " levels of security that you have to get through.\n";
+    std::cout << "Enter the three numbers that make up the code, enter a space between each number.\n";
+    std::cout << "The numbers will be between 1 and 9.\n";
+}
+
+void PrintLevelInfo(int Difficulty) {
+    std::cout << "\n\nAttempting to access security level " << Difficulty << std::endl;
 }
